@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 type MenuItem = {
   id: number;
   name: string;
   link: string;
-};
+}[];
 
 function Navbar() {
-  const menuItems: MenuItem[] = [
+  const [showMenu, setShowMenu] = useState(false);
+
+  console.log(showMenu);
+
+  const menuItems: MenuItem = [
     {
       id: 1,
       name: "home",
@@ -31,12 +35,13 @@ function Navbar() {
   ];
 
   const menu = menuItems.map((item) => (
-    <div
+    <a
+      href={item.link}
       key={item.id}
-      className="mx-2 py-2 px-4 rounded-lg capitalize hover:bg-gray-400 text-white cursor-pointer"
+      className="mx-2 py-2 px-4 rounded-lg capitalize hover:bg-gray-400 text-white cursor-pointer hidden md:block"
     >
       {item.name}
-    </div>
+    </a>
   ));
 
   return (
@@ -44,14 +49,22 @@ function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center bg-slate-700 text-white py-6 px-8 rounded-xl mb-20">
         <div className="logo">logo</div>
         <div className="menu flex items-center">{menu}</div>
-        <div className="actions flex gap-2">
-          <button className="bg-slate-200 text-black py-2 px-4 rounded-xl hover:bg-gray-600 hover:text-white">
+
+        {/* //actions  */}
+        <div className="actions gap-2 hidden md:flex">
+          <button className="bg-slate-200 text-black py-1 px-4 rounded-xl hover:bg-gray-600 hover:text-white">
             SignUp
           </button>
-          <button className="bg-slate-200 text-black py-2 px-4 rounded-xl hover:bg-gray-600 hover:text-white">
+          <button className="bg-slate-200 text-black py-1 px-4 rounded-xl hover:bg-gray-600 hover:text-white">
             SignIn
           </button>
         </div>
+        <button
+          onClick={() => setShowMenu(!showMenu)}
+          className="actions-moble block md:hidden bg-transparent hover:bg-slate-400 text-black px-4 py-2 rounded-xl"
+        >
+          I
+        </button>
       </div>
     </div>
   );
