@@ -6,7 +6,7 @@ import Collapse from './components/collapse/Collapse';
 function App() {
   return (
     <div className="App">
-    <Collapse title="collapse" color="secondary" variant='filled' >
+    <Collapse title="collapse" bgColor="primary"  variant='filled' >
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem aut quaerat culpa, veniam facere repudiandae!</p>
       </Collapse>
     </div>
