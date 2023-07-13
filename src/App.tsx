@@ -1,6 +1,5 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ToggleSwitch from './components/switch';
 
 function App() {
   return (
@@ -8,6 +7,7 @@ function App() {
      <h1 className="text-3xl bg-green-800 font-bold underline">
       Hello world!
     </h1>
+    <ToggleSwitch color="success"  label="Toggle 1" />
     </div>
   );
 }
