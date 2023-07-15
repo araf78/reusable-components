@@ -1,17 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Collapse from './components/collapse/Collapse';
 import Banner from './components/banner/Banner';
+import Collapse from './components/collapse/Collapse';
+import ToggleSwitch from './components/switch';
 
 function App() {
   return (
     <div className="App">
-    <Collapse title="collapse" bgColor="primary"  variant='filled' >
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem aut quaerat culpa, veniam facere repudiandae!</p>
-      </Collapse>
-
-      <Banner></Banner>
+     <h1 className="text-3xl bg-green-800 font-bold underline">
+      Hello world!
+    </h1>
+      <Banner type='success'>submit</Banner>
     </div>
   );
 }
