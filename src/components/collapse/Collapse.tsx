@@ -8,14 +8,14 @@ type  CollapseProps = {
   children: React.ReactNode;
 }
 
-const Collapse = ({ title="collapse", bgColor="primary", textColor="primary", variant="outlined", children }: CollapseProps) => {
+const Collapse = ({ title="collapse", bgColor="primary", textColor="primary", variant="filled", children }: CollapseProps) => {
   const bgColors = {
     primary: "bg-slate-200 hover:bg-slate-300 focus:ring-slate-100 ",
     secondary: "bg-red-700 hover:bg-red-800 focus:ring-red-300 ",
   }
   const textColors = {
     primary: "text-black hover:text-gray-900",
-    secondary: "text-red-500 hover:text-red-700",
+    secondary: "text-red-400 hover:text-red-700",
   }
 
   const variants = {
@@ -45,7 +45,7 @@ const Collapse = ({ title="collapse", bgColor="primary", textColor="primary", va
           }`}
       >
         <div className="p-4">
-          <div className={`block rounded-lg ${bgColors[bgColor]}  p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 dark:text-neutral-50`}>{children}</div>
+          <div className={`block rounded-lg ${bgColors[bgColor]} ${textColors[textColor]} p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 dark:text-neutral-50`}>{children}</div>
         </div>
       </div>
     </div>
