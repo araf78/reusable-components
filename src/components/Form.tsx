@@ -1,7 +1,8 @@
 import React from 'react'
 
-export default function Form() {
-  return (
-    <div>Form</div>
-  )
+interface FormProps{
+     input: String;
+     onClick: String;
+
+
 }
