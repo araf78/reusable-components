@@ -33,12 +33,12 @@ import React from "react";
 
 interface InputProps {
   name: string;
-  label: string;
-  type: string;
-  value: string;
-  placeholder: string;
-  className: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  label?: string;
+  type?: string;
+  value?: string;
+  placeholder?: string;
+  className?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = ({
