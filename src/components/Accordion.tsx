@@ -28,13 +28,13 @@ type AccordionProps = {
   color?: 'primary' | 'success';
 };
 
-const Accordion: React.FC<AccordionProps> = ({ accordionItems, color='primary' }) => {
+const Accordion: React.FC<AccordionProps> = ({ accordionItems, color = 'primary' }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  
+
   const toggleAccordion = (index: number) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
-  
+
   const colors = {
     primary: "bg-slate-200 hover:bg-slate-200  focus:ring-slate-100 ",
     success: "bg-gray-200 hover:bg-gray-200 focus:ring-gray-300 ",
@@ -45,19 +45,17 @@ const Accordion: React.FC<AccordionProps> = ({ accordionItems, color='primary' }
       {accordionItems.map((item, index) => (
         <div key={index}>
           <div
-            className={`cursor-pointer hover:${colors[color]} flex space-x-5 pt-5 px-5 accordion Items-center h-16 ${
-              activeIndex === index ? `${colors[color]}` : ''
-            }`}
+            className={`cursor-pointer hover:${colors[color]} flex space-x-5 pt-5 px-5 accordion Items-center h-16 ${activeIndex === index ? `${colors[color]}` : ''
+              }`}
             onClick={() => toggleAccordion(index)}
           >
             {activeIndex === index ? <FaMinus /> : <FaPlus />}
             <h3 className="font-medium">{item.title}</h3>
           </div>
-          <div className={`overflow-hidden transition-max-height duration-300 ease-out ${
-            activeIndex === index ? 'max-h-96' : 'max-h-0'
-          }`}>
+          <div className={`overflow-hidden transition-all ease-in-out duration-700 ${activeIndex === index ? 'max-h-96 ' : 'max-h-0'
+            }`}>
             {activeIndex === index && (
-              <div className={`${colors[color]} pb-5 px-5`}>
+              <div className={`${colors[color]}  pb-5 px-5`}>
                 <p className="leading-6 font-light pl-9 text-justify">
                   {item.content}
                 </p>

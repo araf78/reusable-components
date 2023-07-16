@@ -5,7 +5,7 @@ function App() {
   const accordionItems = [
     {
       title: 'Accordion Item 1',
-      content: 'Content for Accordion Item 1',
+      content: 'Content for Accordion Item 1 Content for Accordion Item 1 Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1Content for Accordion Item 1',
     },
     {
       title: 'Accordion Item 2',
