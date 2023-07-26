@@ -43,16 +43,19 @@ const Accordion: React.FC<AccordionProps> = ({ accordionItems, color = 'primary'
   return (
     <div className=' w-3/4 mx-auto'>
       {accordionItems.map((item, index) => (
-        <div key={index}>
+        <div key={index} className='flex flex-col items-center'>
           <div
-            className={`cursor-pointer hover:${colors[color]} flex space-x-5 pt-5 px-5 accordion Items-center h-16 ${activeIndex === index ? `${colors[color]}` : ''
+            className={`cursor-pointer hover:${colors[color]} flex space-x-5 pt-5 px-5 accordion Items-center h-16 w-3/4 ${activeIndex === index ? `${colors[color]}` : ''
               }`}
             onClick={() => toggleAccordion(index)}
           >
             {activeIndex === index ? <FaMinus /> : <FaPlus />}
             <h3 className="font-medium">{item.title}</h3>
           </div>
-          <div className={`overflow-hidden transition-all ease-in-out duration-700 ${activeIndex === index ? 'max-h-96 ' : 'max-h-0'
+
+
+          
+          <div className={`overflow-hidden transition-all ease-in-out duration-700 w-3/4 ${activeIndex === index ? 'max-h-96 ' : 'max-h-0'
             }`}>
             {activeIndex === index && (
               <div className={`${colors[color]}  pb-5 px-5`}>
