@@ -45,7 +45,7 @@ const Accordion: React.FC<AccordionProps> = ({ accordionItems, color = 'primary'
       {accordionItems.map((item, index) => (
         <div key={index} className='flex flex-col items-center'>
           <div
-            className={`cursor-pointer hover:${colors[color]} flex space-x-5 pt-5 px-5 accordion Items-center h-16 w-3/4 ${activeIndex === index ? `${colors[color]}` : ''
+            className={`cursor-pointer hover:${colors[color]} flex space-x-5 py-5 px-5   items-center h-16 w-3/4 ${activeIndex === index ? `${colors[color]}` : ''
               }`}
             onClick={() => toggleAccordion(index)}
           >
